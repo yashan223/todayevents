@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 98%;
+
+    --card: 30 25% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 30 25% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 30 65% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 50% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 20% 20%;
+    --muted-foreground: 210 30% 70%;
+
+    --accent: 30 40% 65%;
+    --accent-foreground: 30 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 25%;
+    --input: 30 20% 25%;
+    --ring: 30 65% 45%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(30 65% 45%) 0%, hsl(30 50% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --shadow-elegant: 0 10px 40px -10px hsl(30 65% 45% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(220 15% 15% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 30 65% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 50% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 30 40% 65%;
+    --accent-foreground: 30 30% 15%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 30 65% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: linear-gradient(135deg, hsl(30 30% 12%) 0%, hsl(30 25% 8%) 50%, hsl(30 20% 6%) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html {
+      font-size: 16px; /* Ensure readable font size on mobile */
+    }
+  }
+  
+  /* Improve touch targets for better mobile UX */
+  button:not([class*="h-"]), 
+  a:not([class*="h-"]), 
+  input:not([class*="h-"]), 
+  textarea:not([class*="h-"]), 
+  select:not([class*="h-"]) {
+    min-height: 44px; /* iOS recommended touch target */
+  }
+}

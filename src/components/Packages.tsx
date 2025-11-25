@@ -27,8 +27,7 @@ const packages = [
       "One table",
       "Floor carpet",
       "Light setup",
-      "Cartoon characters",
-      "Light setup"
+      "Cartoon characters"
     ],
     popular: true
   },

@@ -15,29 +15,46 @@ const PortfolioDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  const nextImage = () => {
+    if (!project) return;
+    setSelectedImage((prev) => (prev + 1) % project.images.length);
+  };
+
+  const prevImage = () => {
+    if (!project) return;
+    setSelectedImage((prev) => (prev - 1 + project.images.length) % project.images.length);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!project) return;
+      
       if (e.key === 'Escape' && isFullscreen) {
         setIsFullscreen(false);
+      } else if (e.key === 'ArrowLeft') {
+        prevImage();
+      } else if (e.key === 'ArrowRight') {
+        nextImage();
       }
     };
     
+    document.addEventListener('keydown', handleKeyPress);
+    
     if (isFullscreen) {
-      document.addEventListener('keydown', handleEscape);
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
     
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', handleKeyPress);
       document.body.style.overflow = 'unset';
     };
-  }, [isFullscreen]);
+  }, [isFullscreen, selectedImage, project]);
 
   if (!project) {
     return (
@@ -61,14 +78,6 @@ const PortfolioDetail = () => {
       gala: "bg-accent/10 text-accent"
     };
     return colors[type] || "bg-muted text-muted-foreground";
-  };
-
-  const nextImage = () => {
-    setSelectedImage((prev) => (prev + 1) % project.images.length);
-  };
-
-  const prevImage = () => {
-    setSelectedImage((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
   return (

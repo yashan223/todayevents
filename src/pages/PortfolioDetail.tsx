@@ -3,7 +3,7 @@ import { projects } from "@/components/Portfolio";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Calendar, MapPin, Users, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Calendar, MapPin, Users, CheckCircle2, ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
@@ -13,10 +13,31 @@ const PortfolioDetail = () => {
   const navigate = useNavigate();
   const project = projects.find(p => p.id === id);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        setIsFullscreen(false);
+      }
+    };
+    
+    if (isFullscreen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isFullscreen]);
 
   if (!project) {
     return (
@@ -80,45 +101,55 @@ const PortfolioDetail = () => {
                 <img
                   src={project.images[selectedImage]}
                   alt={`${project.title} - Image ${selectedImage + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                  onClick={() => setIsFullscreen(true)}
                 />
+                
+                {/* Fullscreen Button */}
+                <button
+                  onClick={() => setIsFullscreen(true)}
+                  className="absolute top-3 right-3 h-10 w-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+                  aria-label="Open fullscreen"
+                >
+                  <Maximize2 className="h-5 w-5" />
+                </button>
                 
                 {/* Navigation Arrows */}
                 {project.images.length > 1 && (
                   <>
                     <button
                       onClick={prevImage}
-                      className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+                      className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
                       aria-label="Previous image"
                     >
-                      <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                      <ChevronLeft className="h-6 w-6 md:h-7 md:w-7" />
                     </button>
                     <button
                       onClick={nextImage}
-                      className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+                      className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
                       aria-label="Next image"
                     >
-                      <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                      <ChevronRight className="h-6 w-6 md:h-7 md:w-7" />
                     </button>
                     
                     {/* Image Counter */}
-                    <div className="absolute bottom-2 md:bottom-4 right-2 md:right-4 bg-black/50 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
+                    <div className="absolute bottom-3 md:bottom-4 right-3 md:right-4 bg-black/60 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-sm md:text-base font-medium">
                       {selectedImage + 1} / {project.images.length}
                     </div>
                   </>
                 )}
               </div>
               
-              <div className="grid grid-cols-3 gap-2 md:gap-3 lg:gap-4">
+              <div className="grid grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                 {project.images.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
                     className={`aspect-[4/3] rounded-lg overflow-hidden ${
                       selectedImage === index 
-                        ? "ring-2 ring-primary" 
-                        : "opacity-60 hover:opacity-100"
-                    } transition-all`}
+                        ? "ring-2 ring-primary scale-105" 
+                        : "opacity-70 hover:opacity-100 hover:scale-105"
+                    } transition-all duration-200`}
                   >
                     <img
                       src={image}
@@ -163,6 +194,52 @@ const PortfolioDetail = () => {
           </div>
         </div>
       </div>
+      
+      {/* Fullscreen Modal */}
+      {isFullscreen && (
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsFullscreen(false)}
+            className="absolute top-4 right-4 h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-20"
+            aria-label="Close fullscreen"
+          >
+            <X className="h-6 w-6" />
+          </button>
+          
+          {/* Image Counter */}
+          <div className="absolute top-4 left-4 bg-white/10 text-white px-4 py-2 rounded-full text-base font-medium z-20">
+            {selectedImage + 1} / {project.images.length}
+          </div>
+          
+          {/* Main Image */}
+          <img
+            src={project.images[selectedImage]}
+            alt={`${project.title} - Image ${selectedImage + 1}`}
+            className="max-h-[90vh] max-w-[95vw] object-contain"
+          />
+          
+          {/* Navigation Arrows */}
+          {project.images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 h-14 w-14 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-20"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-8 w-8" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 h-14 w-14 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all z-20"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-8 w-8" />
+              </button>
+            </>
+          )}
+        </div>
+      )}
       
       <Footer />
     </div>

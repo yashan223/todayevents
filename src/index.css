@@ -94,6 +94,12 @@ All colors MUST be HSL.
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    background-color: hsl(30 20% 6%);
+    overscroll-behavior: none;
+  }
+  
+  body {
+    overscroll-behavior-y: none;
   }
   
   /* Mobile optimizations */

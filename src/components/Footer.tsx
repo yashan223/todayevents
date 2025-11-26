@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="bg-[hsl(30_25%_10%)] text-foreground py-4 px-4">
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Today Events. All rights reserved.</p>
+          <p>Today Events. All rights reserved. @xoxod33p</p>
           
           <div className="flex gap-2">
             <a href="https://www.facebook.com/todayevent.lk" target="_blank" rel="noopener noreferrer" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">

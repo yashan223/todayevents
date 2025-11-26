@@ -182,7 +182,7 @@ const PortfolioDetail = () => {
               </div>
 
               <div>
-                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">About This Event</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">About This</h2>
                 <p className="text-sm md:text-base text-foreground leading-relaxed">
                   {project.description}
                 </p>

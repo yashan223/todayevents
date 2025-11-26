@@ -5,6 +5,7 @@ import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import { MessageCircle } from "lucide-react";
 
 const Index = () => {
@@ -21,6 +22,9 @@ const Index = () => {
       <Services />
       <Contact />
       <Footer />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
       
       {/* WhatsApp Floating Button */}
       <button

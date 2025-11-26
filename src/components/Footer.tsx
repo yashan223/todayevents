@@ -14,13 +14,13 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Today Events. All rights reserved.</p>
           
           <div className="flex gap-2">
-            <a href="https://www.facebook.com/todayevent.lk" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <a href="https://www.facebook.com/todayevent.lk" target="_blank" rel="noopener noreferrer" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">
               <Facebook className="h-3 w-3" />
             </a>
-            <a href="https://www.instagram.com/todayevent.lk" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <a href="https://www.instagram.com/todayevent.lk" target="_blank" rel="noopener noreferrer" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">
               <Instagram className="h-3 w-3" />
             </a>
-            <a href="https://twitter.com/todayevent.lk" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">
+            <a href="https://twitter.com/todayevent.lk" target="_blank" rel="noopener noreferrer" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">
               <Twitter className="h-3 w-3" />
             </a>
             <a href="https://www.tiktok.com/@todayevents0" target="_blank" rel="noopener noreferrer" className="h-7 w-7 rounded-full bg-foreground/10 hover:bg-primary transition-colors flex items-center justify-center">

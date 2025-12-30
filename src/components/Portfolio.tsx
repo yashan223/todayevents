@@ -148,11 +148,11 @@ const Portfolio = () => {
 
   const getTypeColor = (type: ProjectType) => {
     const colors: Record<ProjectType, string> = {
-      wedding: "bg-accent/10 text-accent",
-      birthday: "bg-secondary/10 text-secondary",
-      engagement: "bg-primary/10 text-primary",
-      anniversary: "bg-accent/10 text-accent",
-      flower: "bg-green-100 text-green-700",
+      wedding: "bg-accent text-white shadow-md",
+      birthday: "bg-secondary text-white shadow-md",
+      engagement: "bg-primary text-white shadow-md",
+      anniversary: "bg-accent text-white shadow-md",
+      flower: "bg-green-600 text-white shadow-md",
       all: "bg-muted text-muted-foreground"
     };
     return colors[type];

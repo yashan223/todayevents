@@ -22,6 +22,3 @@ npm run dev
 npm run build
 ```
 
-## License
-
-MIT

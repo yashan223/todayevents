@@ -23,7 +23,13 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Initial loading state shown before React hydrates -->
+      <div id="initial-loader" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background-color:#faf9f6;">
+        <div style="width:40px;height:40px;border:3px solid #e5e5e5;border-top-color:#d4a574;border-radius:50%;animation:spin 1s linear infinite;"></div>
+        <style>@keyframes spin{to{transform:rotate(360deg);}}</style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

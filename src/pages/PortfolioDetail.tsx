@@ -26,10 +26,6 @@ const PortfolioDetail = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (!project) return;
       
@@ -88,15 +84,7 @@ const PortfolioDetail = () => {
         <div className="container mx-auto max-w-7xl">
           <Button 
             variant="ghost" 
-            onClick={() => {
-              navigate("/");
-              setTimeout(() => {
-                const portfolioSection = document.getElementById("portfolio");
-                if (portfolioSection) {
-                  portfolioSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }, 100);
-            }}
+            onClick={() => navigate("/", { state: { scrollTo: "portfolio" } })}
             className="mb-6 md:mb-8 text-sm md:text-base h-9 md:h-10"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />

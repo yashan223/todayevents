@@ -9,14 +9,9 @@ const Navbar = () => {
   const location = useLocation();
   
   const scrollToSection = (id: string) => {
-    // If we're not on the home page, navigate there first
+    // If we're not on the home page, navigate there first with scroll state
     if (location.pathname !== '/') {
-      navigate('/');
-      // Wait for navigation and then scroll
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      navigate('/', { state: { scrollTo: id } });
     } else {
       const element = document.getElementById(id);
       element?.scrollIntoView({ behavior: 'smooth' });

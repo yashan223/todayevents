@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
-import OptimizedImage, { preloadImagesAsync } from "@/components/OptimizedImage";
 
 export type ProjectType = "wedding" | "birthday" | "engagement" | "anniversary" | "flower" | "all";
 
@@ -143,12 +142,6 @@ const Portfolio = () => {
   const [selectedType, setSelectedType] = useState<ProjectType>("all");
   const navigate = useNavigate();
 
-  // Preload all thumbnail images on component mount
-  useEffect(() => {
-    const thumbnailUrls = projects.map(p => p.thumbnail);
-    preloadImagesAsync(thumbnailUrls);
-  }, []);
-
   const filteredProjects = selectedType === "all" 
     ? projects 
     : projects.filter(p => p.type === selectedType);
@@ -198,10 +191,11 @@ const Portfolio = () => {
               onClick={() => navigate(`/portfolio/${project.id}`)}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <OptimizedImage
+                <img
                   src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="eager"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className={`${getTypeColor(project.type)} capitalize`}>

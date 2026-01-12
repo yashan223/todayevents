@@ -1,25 +1,17 @@
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Packages from "@/components/Packages";
-import Portfolio, { projects } from "@/components/Portfolio";
+import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import { MessageCircle } from "lucide-react";
-import { preloadImagesAsync } from "@/components/OptimizedImage";
 
 const Index = () => {
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/94742979393", "_blank");
   };
-
-  // Preload all portfolio thumbnails immediately when page loads
-  useEffect(() => {
-    const thumbnailUrls = projects.map(p => p.thumbnail);
-    preloadImagesAsync(thumbnailUrls);
-  }, []);
 
   return (
     <div className="min-h-screen">

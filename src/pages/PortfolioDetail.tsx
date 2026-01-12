@@ -7,7 +7,6 @@ import { ArrowLeft, Calendar, MapPin, Users, CheckCircle2, ChevronLeft, ChevronR
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
-import OptimizedImage, { preloadImagesAsync } from "@/components/OptimizedImage";
 
 const PortfolioDetail = () => {
   const { id } = useParams();
@@ -29,13 +28,6 @@ const PortfolioDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Preload all project images when the project loads
-  useEffect(() => {
-    if (project) {
-      preloadImagesAsync(project.images);
-    }
-  }, [project]);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -115,11 +107,12 @@ const PortfolioDetail = () => {
             {/* Image Gallery */}
             <div className="space-y-3 md:space-y-4">
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-elegant group">
-                <OptimizedImage
+                <img
                   src={project.images[selectedImage]}
                   alt={`${project.title} - Image ${selectedImage + 1}`}
                   className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={() => setIsFullscreen(true)}
+                  loading="eager"
                 />
                 
                 {/* Fullscreen Button */}
@@ -168,10 +161,11 @@ const PortfolioDetail = () => {
                         : "opacity-70 hover:opacity-100 hover:scale-105"
                     } transition-all duration-200`}
                   >
-                    <OptimizedImage
+                    <img
                       src={image}
                       alt={`Thumbnail ${index + 1}`}
                       className="w-full h-full object-cover"
+                      loading="eager"
                     />
                   </button>
                 ))}

@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ["todayevents.lk"],
+    allowedHosts: ["todayevents.lk", "www.todayevents.lk"],
     fs: {
       allow: [".."],
     },

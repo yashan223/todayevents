@@ -10,29 +10,42 @@ interface OptimizedImageProps {
 const OptimizedImage = ({ src, alt, className = "", onClick }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+  const [currentSrc, setCurrentSrc] = useState(src);
   const imgRef = useRef<HTMLImageElement>(null);
+  const maxRetries = 3;
 
   useEffect(() => {
     // Reset state when src changes
     setIsLoaded(false);
     setHasError(false);
+    setRetryCount(0);
+    setCurrentSrc(src);
 
     // Check if image is already cached
     const img = new Image();
     img.src = src;
     
-    if (img.complete) {
+    if (img.complete && img.naturalWidth > 0) {
       setIsLoaded(true);
     }
   }, [src]);
 
   const handleLoad = () => {
     setIsLoaded(true);
+    setHasError(false);
   };
 
   const handleError = () => {
-    setHasError(true);
-    setIsLoaded(true);
+    if (retryCount < maxRetries) {
+      // Retry loading with cache-busting query param
+      setRetryCount(prev => prev + 1);
+      const separator = src.includes('?') ? '&' : '?';
+      setCurrentSrc(`${src}${separator}retry=${retryCount + 1}&t=${Date.now()}`);
+    } else {
+      setHasError(true);
+      setIsLoaded(true);
+    }
   };
 
   return (
@@ -45,7 +58,7 @@ const OptimizedImage = ({ src, alt, className = "", onClick }: OptimizedImagePro
       {/* Actual image */}
       <img
         ref={imgRef}
-        src={hasError ? "/placeholder.svg" : src}
+        src={hasError ? "/placeholder.svg" : currentSrc}
         alt={alt}
         className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         onLoad={handleLoad}

@@ -21,8 +21,8 @@ export const projects: Project[] = [
       "/work/wedding1/2.jpg",
       "/work/wedding1/3.jpg"
     ],
-    description: "A grand wedding celebration with luxurious stage decorations, fresh floral arrangements, elegant lighting, and stunning backdrops throughout the venue.",
-    services: ["Stage Decoration", "Floral Arrangements", "Backdrop Design", "Lighting Setup", "Entrance Decor"]
+    description: "An elegant wedding celebration featuring sophisticated stage decorations, beautiful floral arrangements, ambient lighting, and refined backdrops for a timeless experience.",
+    services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]
   },
     {
     id: "wedding-2",
@@ -35,8 +35,8 @@ export const projects: Project[] = [
       "/work/wedding2/3.jpg",
       "/work/wedding2/4.jpg"
     ],
-    description: "A grand wedding celebration with luxurious stage decorations, fresh floral arrangements, elegant lighting, and stunning backdrops throughout the venue.",
-    services: ["Stage Decoration", "Floral Arrangements", "Backdrop Design", "Lighting Setup", "Entrance Decor"]
+    description: "An elegant wedding celebration featuring sophisticated stage decorations, beautiful floral arrangements, ambient lighting, and refined backdrops for a timeless experience.",
+    services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]
   },
   {
     id: "engagement-1",
@@ -65,7 +65,14 @@ export const projects: Project[] = [
       "/work/birthday1/6.jpg"
     ],
     description: "A magical Harry Potter–themed birthday party featuring custom Hogwarts-inspired backdrops, spellbinding balloon garlands, a neon 'Happy Birthday' sign, and enchanting wizard-style decorations.",
-    services: ["Themed Backdrop", "Balloon Decoration", "Neon Lights", "Floor Carpet", "Character Cutouts"]
+    services: [
+      "Harry Potter Backdrop",
+      "Spellbinding Balloon Garlands",
+      "Neon 'Happy Birthday' Sign",
+      "Wizard-Style Decorations",
+      "Floor Carpet",
+      "Magic Character Cutouts"
+    ]
   },
   {
     id: "anniversary-1",
@@ -93,7 +100,14 @@ export const projects: Project[] = [
       "/work/birthday2/5.jpg"
     ],
     description: "A whimsical unicorn-themed birthday with pastel balloon arches, rainbow decorations, custom backdrop, and magical party setup.",
-    services: ["Unicorn Theme Setup", "Balloon Arch", "Rainbow Decor", "Custom Backdrop", "Floor Carpet"]
+    services: [
+      "Unicorn Backdrop",
+      "Pastel Balloon Arch",
+      "Rainbow Table Decor",
+      "Custom Unicorn Props",
+      "Floor Carpet",
+      "Magical Party Setup"
+    ]
   },
   {
     id: "birthday-3",
@@ -106,8 +120,15 @@ export const projects: Project[] = [
       "/work/birthday3/3.jpg",
       "/work/birthday3/4.jpg"
     ],
-    description: "An action-packed superhero-themed birthday party with vibrant decorations, custom character setups, themed balloon arrangements, and exciting party props.",
-    services: ["Superhero Theme Setup", "Character Props", "Balloon Decorations", "Photo Booth Setup", "Themed Backdrop"]
+    description: "A lively and memorable birthday party with vibrant decorations, custom celebratory setups, themed balloon arrangements, and exciting party props for seniors.",
+    services: [
+      "Celebration Backdrop",
+      "Vibrant Balloon Decorations",
+      "Custom Celebration Props",
+      "Photo Booth",
+      "Floor Carpet",
+      "Exciting Party Props"
+    ]
   },
   {
     id: "flower-decoration-1",

@@ -13,7 +13,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "wedding-1",
-    title: "Wedding",
+    title: "Wedding Ceremony",
     type: "wedding",
     thumbnail: "/work/wedding1/1.jpg",
     images: [
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
     {
     id: "wedding-2",
-    title: "Wedding",
+    title: "Wedding Ceremony",
     type: "wedding",
     thumbnail: "/work/wedding2/1.jpg",
     images: [
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   },
   {
     id: "engagement-1",
-    title: "Engagement",
+    title: "Engagement Ceremony",
     type: "engagement",
     thumbnail: "/work/engagement1/1.jpg",
     images: [

@@ -6,7 +6,7 @@ const packages = [
     name: "Basic",
     price: "Rs 15,000",
     description: "Ideal for cozy birthday parties and stylish small events",
-    image: "/work/birthday1/561209381_825382233605427_2402909910801337242_n.jpg",
+    image: "/work/package/basic.jpg",
     features: [
       "Backdrop",
       "Wondering or happy birthday neon light",
@@ -21,7 +21,7 @@ const packages = [
     name: "Premium",
     price: "Rs 25,000",
     description: "Our most popular choice for memorable events",
-    image: "/work/birthday2/481269547_648433627966956_4586121035398510464_n.jpg",
+    image: "/work/package/premium.jpg",
     features: [
       "2 Backdrops",
       "Happy birthday neon light",
@@ -37,7 +37,7 @@ const packages = [
     name: "Customizable",
     price: "Personalized",
     description: "The ultimate experience for grand celebrations",
-    image: "/work/engagement1/558869147_1388021599990934_4280350293898980616_n.jpg",
+    image: "/work/package/custom.jpg",
     features: [
       "Customizable venue (indoor/outdoor)",
       "Flexible location options",
@@ -79,7 +79,7 @@ const Packages = () => {
                 </div>
               )}
               
-              <div className="w-full h-48 overflow-hidden">
+              <div className="w-full h-48 overflow-hidden rounded-t-xl">
                 <img 
                   src={pkg.image} 
                   alt={pkg.name + " package"} 

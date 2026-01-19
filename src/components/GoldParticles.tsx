@@ -8,10 +8,8 @@ function getParticleCount() {
   }
   return 40;
 }
-// These are rough bounding boxes for logo/text to avoid (percentages)
 
 function getAvoidZones() {
-  // Use smaller avoid zones for mobile
   if (typeof window !== 'undefined' && window.innerWidth < 640) {
     return [
       { left: 20, top: 0, width: 60, height: 32 }, // logo
@@ -20,7 +18,6 @@ function getAvoidZones() {
       { left: 25, top: 68, width: 50, height: 18 }, // buttons
     ];
   }
-  // Default (desktop/tablet)
   return [
     { left: 30, top: 0, width: 40, height: 30 },
     { left: 20, top: 28, width: 60, height: 18 },
@@ -40,11 +37,9 @@ function isInAvoidZone(left: number, top: number, avoidZones: {left:number,top:n
 }
 
 const GoldParticles: React.FC = () => {
-  // Generate only particles outside avoid zones
   const [particles, setParticles] = React.useState<any[]>([]);
 
   React.useEffect(() => {
-    // Helper to generate particles
     function generateParticles() {
       const avoidZones = getAvoidZones();
       const PARTICLE_COUNT = getParticleCount();
@@ -54,7 +49,6 @@ const GoldParticles: React.FC = () => {
         const left = Math.random() * 100;
         const top = Math.random() * 100;
         if (!isInAvoidZone(left, top, avoidZones)) {
-          // On mobile, make duration longer for slower movement
           const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
           arr.push({
             left,

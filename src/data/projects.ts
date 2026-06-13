@@ -12,6 +12,44 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "wedding-3",
+    title: "Wedding Ceremony",
+    type: "wedding",
+    thumbnail: "/work/wedding3/1.jpg",
+    images: [
+      "/work/wedding3/1.jpg",
+      "/work/wedding3/2.jpg",
+      "/work/wedding3/3.jpg"
+    ],
+    description: "A beautiful and intimate wedding ceremony with elegant decorations, romantic ambiance, and carefully curated details creating a memorable celebration.",
+    services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]
+  },
+  {
+    id: "birthday-4",
+    title: "Kids Birthday Celebration",
+    type: "birthday",
+    thumbnail: "/work/birthday4/1.jpg",
+    images: [
+      "/work/birthday4/1.jpg",
+      "/work/birthday4/2.jpg",
+      "/work/birthday4/3.jpg",
+      "/work/birthday4/4.jpg",
+      "/work/birthday4/5.jpg",
+      "/work/birthday4/6.jpg",
+      "/work/birthday4/7.jpg",
+      "/work/birthday4/8.jpg"
+    ],
+    description: "A magical Harry Potter–themed birthday party featuring custom Hogwarts-inspired backdrops, spellbinding balloon garlands, a neon 'Happy Birthday' sign, and enchanting wizard-style decorations.",
+    services: [
+      "Harry Potter Backdrop",
+      "Spellbinding Balloon Garlands",
+      "Neon 'Happy Birthday' Sign",
+      "Wizard-Style Decorations",
+      "Floor Carpet",
+      "Magic Character Cutouts"
+    ]
+  },
+  {
     id: "wedding-1",
     title: "Wedding Ceremony",
     type: "wedding",
@@ -19,7 +57,11 @@ export const projects: Project[] = [
     images: [
       "/work/wedding1/1.jpg",
       "/work/wedding1/2.jpg",
-      "/work/wedding1/3.jpg"
+      "/work/wedding1/3.jpg",
+      "/work/wedding1/4.jpg",
+      "/work/wedding1/5.jpg",
+      "/work/wedding1/6.jpg",
+      "/work/wedding1/7.jpg"
     ],
     description: "An elegant wedding celebration featuring sophisticated stage decorations, beautiful floral arrangements, ambient lighting, and refined backdrops for a timeless experience.",
     services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]
@@ -53,25 +95,23 @@ export const projects: Project[] = [
   },
   {
     id: "birthday-1",
-    title: "Kids Birthday Celebration",
+    title: "Festive Birthday Celebration",
     type: "birthday",
     thumbnail: "/work/birthday1/1.jpg",
     images: [
       "/work/birthday1/1.jpg",
       "/work/birthday1/2.jpg",
       "/work/birthday1/3.jpg",
-      "/work/birthday1/4.jpg",
-      "/work/birthday1/5.jpg",
-      "/work/birthday1/6.jpg"
+      "/work/birthday1/4.jpg"
     ],
-    description: "A magical Harry Potter–themed birthday party featuring custom Hogwarts-inspired backdrops, spellbinding balloon garlands, a neon 'Happy Birthday' sign, and enchanting wizard-style decorations.",
+    description: "A vibrant and cheerful birthday celebration with festive decorations, colorful balloon arrangements, creative backdrops, and exciting themed props.",
     services: [
-      "Harry Potter Backdrop",
-      "Spellbinding Balloon Garlands",
-      "Neon 'Happy Birthday' Sign",
-      "Wizard-Style Decorations",
+      "Festive Backdrop",
+      "Colorful Balloon Arrangements",
+      "Creative Props",
+      "Photo Booth Setup",
       "Floor Carpet",
-      "Magic Character Cutouts"
+      "Party Coordination"
     ]
   },
   {
@@ -118,7 +158,8 @@ export const projects: Project[] = [
       "/work/birthday3/1.jpg",
       "/work/birthday3/2.jpg",
       "/work/birthday3/3.jpg",
-      "/work/birthday3/4.jpg"
+      "/work/birthday3/4.jpg",
+      "/work/birthday3/5.jpg"
     ],
     description: "A lively and memorable birthday party with vibrant decorations, custom celebratory setups, themed balloon arrangements, and exciting party props for seniors.",
     services: [

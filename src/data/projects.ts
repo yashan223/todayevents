@@ -61,7 +61,6 @@ export const projects: Project[] = [
       "/work/wedding1/4.jpg",
       "/work/wedding1/5.jpg",
       "/work/wedding1/6.jpg",
-      "/work/wedding1/7.jpg"
     ],
     description: "An elegant wedding celebration featuring sophisticated stage decorations, beautiful floral arrangements, ambient lighting, and refined backdrops for a timeless experience.",
     services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]

@@ -12,6 +12,43 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "wedding-1",
+    title: "Wedding Ceremony",
+    type: "wedding",
+    thumbnail: "/work/wedding1/1.jpg",
+    images: [
+      "/work/wedding1/1.jpg",
+      "/work/wedding1/2.jpg",
+      "/work/wedding1/3.jpg",
+      "/work/wedding1/4.jpg",
+      "/work/wedding1/5.jpg",
+      "/work/wedding1/6.jpg",
+    ],
+    description: "An elegant wedding celebration featuring sophisticated stage decorations, beautiful floral arrangements, ambient lighting, and refined backdrops for a timeless experience.",
+    services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]
+  },
+  {
+    id: "birthday-1",
+    title: "Festive Birthday Celebration",
+    type: "birthday",
+    thumbnail: "/work/birthday1/1.jpg",
+    images: [
+      "/work/birthday1/1.jpg",
+      "/work/birthday1/2.jpg",
+      "/work/birthday1/3.jpg",
+      "/work/birthday1/4.jpg"
+    ],
+    description: "A vibrant and cheerful birthday celebration with festive decorations, colorful balloon arrangements, creative backdrops, and exciting themed props.",
+    services: [
+      "Festive Backdrop",
+      "Colorful Balloon Arrangements",
+      "Creative Props",
+      "Photo Booth Setup",
+      "Floor Carpet",
+      "Party Coordination"
+    ]
+  },
+  {
     id: "wedding-3",
     title: "Wedding Ceremony",
     type: "wedding",
@@ -49,22 +86,6 @@ export const projects: Project[] = [
       "Magic Character Cutouts"
     ]
   },
-  {
-    id: "wedding-1",
-    title: "Wedding Ceremony",
-    type: "wedding",
-    thumbnail: "/work/wedding1/1.jpg",
-    images: [
-      "/work/wedding1/1.jpg",
-      "/work/wedding1/2.jpg",
-      "/work/wedding1/3.jpg",
-      "/work/wedding1/4.jpg",
-      "/work/wedding1/5.jpg",
-      "/work/wedding1/6.jpg",
-    ],
-    description: "An elegant wedding celebration featuring sophisticated stage decorations, beautiful floral arrangements, ambient lighting, and refined backdrops for a timeless experience.",
-    services: ["Elegant Stage Decoration", "Refined Floral Arrangements", "Classic Backdrop Design", "Ambient Lighting Setup", "Grand Entrance Decor"]
-  },
     {
     id: "wedding-2",
     title: "Wedding Ceremony",
@@ -91,27 +112,6 @@ export const projects: Project[] = [
     ],
     description: "A romantic outdoor engagement with elegant backdrop setups, soft ambient lighting, rose petal decorations, and intimate seating arrangements.",
     services: ["Backdrop Setup", "Floral Decor", "Ambient Lighting", "Seating Arrangement", "Photo Corner"]
-  },
-  {
-    id: "birthday-1",
-    title: "Festive Birthday Celebration",
-    type: "birthday",
-    thumbnail: "/work/birthday1/1.jpg",
-    images: [
-      "/work/birthday1/1.jpg",
-      "/work/birthday1/2.jpg",
-      "/work/birthday1/3.jpg",
-      "/work/birthday1/4.jpg"
-    ],
-    description: "A vibrant and cheerful birthday celebration with festive decorations, colorful balloon arrangements, creative backdrops, and exciting themed props.",
-    services: [
-      "Festive Backdrop",
-      "Colorful Balloon Arrangements",
-      "Creative Props",
-      "Photo Booth Setup",
-      "Floor Carpet",
-      "Party Coordination"
-    ]
   },
   {
     id: "anniversary-1",
